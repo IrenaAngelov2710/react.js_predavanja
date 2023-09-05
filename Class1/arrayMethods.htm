@@ -1,0 +1,110 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <button class="btn">
+            Click me
+        </button>
+        <script>
+        // Primer 1 na casot za map, filter i find
+        let users = [
+            { name: "Martin", lastName: "Trajkov", age: 28 },
+            { name: "Daniel", lastName: "Trajkovski", age: 45 },
+            { name: "Laura", lastName: "Trajkova", age: 23 },
+        ];
+
+        // MAP 
+        // map always returns new array
+        // it does not change the size of the original array
+        let mapUsers = users.map((user) => {
+            let fullName = user.name + ' ' + user.lastName + ' age: ' + user.age;
+            // in map method we must always have return
+            return fullName;
+        })
+        console.log(mapUsers); // Pecati ['MartinTrajkov age: 28', 'DanielTrajkovski age: 45', 'LauraTrajkova age: 23']
+      
+        // FILTER
+        // filter is used to provide new array depending on certain criteria
+        let result = users.filter((user) => user.age < 30);
+        let result1 = users.filter((user) => user.age > 30);
+        console.log(result); // Pecati  [{ name: "Martin", lastName: "Trajkov", age: 28 }, { name: "Laura", lastName: "Trajkova", age: 23 }]
+        console.log(result1); // Pecati { name: "Daniel", lastName: "Trajkovski", age: 45 }
+
+        // FIND
+        // find is used to find an instance inside the array
+        let findResult = users.find((user) => user.name === 'Laura');
+        console.log(findResult); // Pecati { name: "Laura", lastName: "Trajkova", age: 23 }
+
+        // Primer 2 na casot za deklaracija i destrukturiranje na nizi
+        // Ovoj kod koristi destrukturiranje za da se izvlecat [0] i [2] element od nizata "fruits"
+        let fruits = ["mango", "orange", "apple", "lemon", "kiwi"];
+        let fruit1 = fruits[0];
+        let fruit3 = fruits[2];
+        console.log(fruit1, fruit3); // Pecati mango apple
+        // Ovoj kod koristi ",," za da se ignoriraat vtoriot i tretiot element od nizata
+        // Gi izvlekuva prviot i cetvrtiot element i gi dodeluva na promenlivi "fruit11" i "fruit33"
+        let [fruit11,,,fruit33] = fruits;
+        console.log(fruit11, fruit33); // Pecati mango lemon
+
+        // Primer 3 na casot
+        const person = {
+            firstName: "Martin",
+            lastName: "Trajkov",
+            age: 28,
+            hobies: {
+                hoby1: "reading",
+                hoby2: "football"
+            }
+        }
+
+        console.log(person.firstName, person.age, person.hobies.hoby1);
+        if(person.age > 30) {
+            console.log("older than 30");
+        }
+
+        const { firstName, age, hobies: {hoby1} } = person
+
+        if(firstName === 'Martin')
+        {
+            console.log("hello");
+        }
+
+        // Primer 4 na casot
+        // Ovoj kod koristi destrukturacija na nizata "fruits2" za da gi izvlece prvite dva elementi vo promenlivite "firstFruit" i "secondFruit", a site ostanati elementi gi stava vo promenlivata "rest"
+        let fruits2 = ["mango", "apple", "orange", "pineapple", "banana"];
+
+        let [firstFruit, secondFruit, ...rest] = fruits2;
+
+        console.log(firstFruit, secondFruit, rest); // Pecati mango apple [ 'orange', 'pineapple', 'banana' ]
+
+        // Vezba na casot
+        // Kreirajte niza od avtomobili kade sto vnatre ke ima godina, marka i model 
+        let avtomobili = [
+            { godina: 2020, marka: "Mercedes", model: "C klass"},
+            { godina: 2021, marka: "Volkswagen", model: "Tiguan"},
+            { godina: 2019, marka: "Volkswagen", model: "Golf 7"},
+        ];
+
+        // i potoa so map da go ispecatite modelot i koja godina e
+        // MAP
+        let mapAvtomobili = avtomobili.map((avtomobil) => {
+            let avtomobiliModelGodina = avtomobil.model + ' ' + 'godina: ' + avtomobil.godina;
+            return avtomobiliModelGodina;
+        })
+        console.log(mapAvtomobili); // Pecati ['C klass godina: 2020', 'Tiguan godina: 2021', 'Golf 7 godina: 2019']
+
+        // Da napraite filter na site avtomobili koi se postari od 2010 godina
+        // FILTER
+        let filteredAvtomobili = avtomobili.filter((avtomobil) => avtomobil.godina < 2010);
+        console.log(filteredAvtomobili); // Pecati []
+
+        // Da probate dali postoi avtomobil so marka BMW
+        // FIND
+        let findAvtomobili = avtomobili.find((avtomobil) => avtomobil.marka === 'BMW');
+        console.log(findAvtomobili); // Pecati undefined
+
+        // Vo terminal npx create-react-app class1
+
+        </script>
+    </body>
+</html>
