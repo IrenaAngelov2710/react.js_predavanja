@@ -1,0 +1,15 @@
+.hobby-text {
+    color: brown;
+}
+
+.hobby-image {
+    width: 400px;
+    height: 300px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.hobby-image:hover {
+    transform: scale(1.1); 
+    filter: brightness(1.2)
+}

@@ -5,6 +5,11 @@
         <button class="btn">
             Click me
         </button>
+
+        <!-- React is a JavaScript library for building user interfaces.
+        React is used to build single-page applications.
+        React allows us to create reusable UI components. -->
+
         <script>
         // Primer 1 na casot za map, filter i find
         let users = [
@@ -57,12 +62,25 @@
             }
         }
 
+        const person1 = {
+                firstName: "Laura",
+                lastName: "Trajkova",
+                age: 28,
+                hobies: {
+                    hoby1: "reading",
+                    hoby2: "football",
+                }
+            }
+
         console.log(person.firstName, person.age, person.hobies.hoby1);
         if(person.age > 30) {
             console.log("older than 30");
         }
 
-        const { firstName, age, hobies: {hoby1} } = person
+        const { firstName, age, hobies: {hoby1} } = person;
+        const { firstName: name, age: lauraAge } = person1;
+
+        console.log(firstName, name, age, lauraAge);
 
         if(firstName === 'Martin')
         {
@@ -103,8 +121,8 @@
         let findAvtomobili = avtomobili.find((avtomobil) => avtomobil.marka === 'BMW');
         console.log(findAvtomobili); // Pecati undefined
 
-        // Vo terminal npx create-react-app class1
-
+        // Vo terminal npx create-react-app exercise1
+        // Ako napravime clone na nekoj proekt od GitHub ako napiseme npm start nema da raboti, treba prvo da se napravi npm install pa potoa npm start
         </script>
     </body>
 </html>
