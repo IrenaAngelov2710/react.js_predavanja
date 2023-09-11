@@ -2,6 +2,7 @@
 // because react sees the small letters as html tags
 import React from "react";
 import { PlaceClass } from "./components/PlaceClass";
+import { PlaceOfResidenceClass } from "./components/PlaceOfResidenceClass"
 
 // we must export the component so we can use it anywhere
 export class AppClass extends React.Component {
@@ -13,7 +14,8 @@ export class AppClass extends React.Component {
       <div>
         <h2>Class Component</h2>
         <PlaceClass />
+        <PlaceOfResidenceClass />
       </div>
-    );
+    )
   }
 }

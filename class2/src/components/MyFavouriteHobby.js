@@ -3,8 +3,6 @@
 
 export function MyFavouriteHobby() {
     return (
-        <div>
             <h2>My favourite hobby is reading</h2>
-        </div>
     )
 }

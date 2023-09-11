@@ -4,13 +4,13 @@
 
 import React from "react";
 
-export class PlaceOfResidence extends React.Component {
+export class PlaceOfResidenceClass extends React.Component {
   render() {
     return (
       <div>
         <h1>Irena Angelov</h1>
         <h2>I am living in Dortmund!</h2>
       </div>
-    );
+    )
   }
 }

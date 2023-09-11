@@ -2,8 +2,6 @@ import "./css/example.css";
 import "./css/hobby.css";
 import { AppClass } from "./AppClass";
 import { Hello } from "./components/Hello";
-import { HelloInDeutch } from "./components/HelloInDeutch";
-import { PlaceOfResidence } from "./components/PlaceOfResidence";
 import { MyHobbies } from "./components/MyHobbies";
 import { MyFavouriteHobby } from "./components/MyFavouriteHobby";
 import { Hobby } from "./components/Hobby";
@@ -27,8 +25,8 @@ function App() {
   }
 
   const student = {
-    name: "Martin",
-    lastName: "Trajkov",
+    name: "Irena",
+    lastName: "Angelov",
     image: "https://thispersondoesnotexist.com/",
   };
 
@@ -61,7 +59,7 @@ function App() {
       {/* <p>5+5</p>
       <p>{5 + 5 + number} result from this should be 20</p>
       {element} */}
-      {/* <h1>Hello, {toUpperCaseName("martin")}</h1> */}
+      {/* <h1>Hello, {toUpperCaseName("Irena")}</h1> */}
       <h1>Hello, {toUpperCaseName(student)}</h1>
       <a target="blank" href="http://google.com">
         Google
@@ -69,9 +67,8 @@ function App() {
       <img src={student.image} style={{ width: 300, height: 300 }}></img>
       {/* <button onClick={print}>Click me</button> */}
       {/* <AppClass /> */}
+      <AppClass />
       <Hello />
-      <HelloInDeutch />
-      <PlaceOfResidence />
       <MyHobbies />
       <MyFavouriteHobby />
       <Hobby />

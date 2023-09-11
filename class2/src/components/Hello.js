@@ -10,7 +10,7 @@ export const Hello = () => {
     // such as div or fragment (<>)
     <>
       <h1>Hello</h1>
-      <h2>Martin</h2>
+      <h2>Irena</h2>
       <HelloInMacedonian />
     </>
   );
