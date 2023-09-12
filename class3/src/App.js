@@ -61,6 +61,7 @@ function App() {
 
   // installing prop-types
   // npm install prop-types --save
+  // npm install --save prop-types
   return (
     <div className="App">
       {/* <h1>Hello from React props</h1> */}
