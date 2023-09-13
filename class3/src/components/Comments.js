@@ -6,12 +6,10 @@
 //? pokraj ova imate nekoe kopce LIKE sto vo konzola ke pecati +1
 
 export function Comments(props) {
-
     console.log(props);
     function onLikeClick() {
         console.log("+1");
       }
-
     return (
       <>
         <table>
@@ -44,7 +42,7 @@ export function Comments(props) {
   // Ovaa React komponenta narecena "Comments" prikazuva lista od komentari na web stranata
 
   //* "console.log(props);"
-  // Ovaa linija gi prikazuva propertitite (props) koi se preneseni kon komponentata vo konzolaza za debagiranje
+  // Ovaa linija gi prikazuva propertitite(props) koi se preneseni kon komponentata vo konzolaza za debagiranje
 
   //* "onLikeClick()"
   // Vo f-jata "onLikeClick()" prosto se prikazuva porakata "+1" vo konzolaza koga ke se klikne na kopceto "LIKE"
@@ -53,4 +51,5 @@ export function Comments(props) {
   // Za sekoj komentar se generira HTML kod koj prikazuva informacii kako ID, avtorot, tekstot i kopceto "LIKE"
 
   // Kopceto "LIKE" ima nastan (event) "onClick" koj ja povikuva f-jata "onLikeClick()" koga ke se klikne na kopceto
-// Vo ovaa implementacija f-jata ne izvrsuva aktuelno dodavanje na lajkovi na komentarite, tuku samo prikazuva debag informacii 
+  
+  // Vo ovaa implementacija f-jata ne izvrsuva aktuelno dodavanje na lajkovi na komentarite, tuku samo prikazuva debag informacii 

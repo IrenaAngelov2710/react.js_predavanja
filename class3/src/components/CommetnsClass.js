@@ -5,6 +5,7 @@ import React from "react";
 
 export class CommentsClass extends React.Component{
   render() {
+    console.log(this.props);
     function onLikeClick(){
       console.log("+1");
     }  
@@ -45,10 +46,10 @@ export class CommentsClass extends React.Component{
   // Vo ovaa implementacija, f-jata "onLikeClick()" ne ja modificira sostojbata na komentarite, tuku samo dava debag informacii
 
   // Vo JSX delot na komponentata, se koristi tabela za prikazuvanje na komentarite
-  // Propertite "this.props.comments" e niza od objekti, kade sekoj objekt pretstavuva eden komentar
+  // Propertite "this.props.comments" e niza od objekti kade sekoj objekt pretstavuva eden komentar
 
   // Preku metodot "map()" se mapira nizata na komentari i za sekoj komentar se generira red vo tabelata
-  // Sekoj red sodrzi informacii za ID na komentarot, avtorot, tekstot i kopceto "LIKE"
+  // Sekoj red sodrzi informacii za ID, avtorot, tekstot i kopceto "LIKE"
 
-  // Kopceto "LIKE" ima nastan (event) "onClick" koja povikuva f-jata "onLikeClick()" koga ke se klikne
+  // Kopceto "LIKE" ima nastan(event) "onClick" koja povikuva f-jata "onLikeClick()" koga ke se klikne
   // Vo ovaa implementacija f-jata ne izvrsuva aktuelno dodavanje na lajkovi na komentarite, tuku samo prikazuva debag informacii 

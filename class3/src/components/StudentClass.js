@@ -1,6 +1,6 @@
 //* Ovoj kod pretstavuva React komponenta narecena "StudentClass" koja e klasna komponenta
-// Ovaa komponentat se nasleduva od "React.Component" i ima metod "render()" koj se koristi za definiranje kako komponentata ke se prikaze na web stranata
-// Vo ovaa komponenta, se prikazuvaat informaciite za studentot koi se prenesuvaat kako propertiti (props) na komponentata
+// Ovaa komponenta se nasleduva od "React.Component" i ima metod "render()" koj se koristi za definiranje kako komponentata ke se prikaze na web stranata
+// Vo ovaa komponenta se prikazuvaat informaciite za studentot koi se prenesuvaat kako propertiti(props) na komponentata
 // Konkretno se prikazuva imeto, prezimeto i indeksot na studentot
 
 import React from "react";
