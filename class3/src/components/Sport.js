@@ -47,3 +47,8 @@ Sport.propTypes = {
   name: PropTypes.string.isRequired,
   sport: PropTypes.string.isRequired,
 };
+
+Sport.defaultProps = {
+  name: "John Doe",
+  sport: "Baseball",
+};

@@ -84,14 +84,15 @@ function App() {
       }
       {/* <Player igrac={gamer} /> */}
 
-      {/* <Comments comments={comments}/> */}
+      {/* <h1 class="component">Functional component</h1>
+      <Comments comments={comments}/> */}
       
       {/* <h1>Student Class</h1>
       <StudentClass student={student} />
       <StudentClass student={student2} /> */}
 
-      <h1>Comments Class</h1>
-      <CommentsClass comments={comments} />
+      {/* <h1 class="component">Class component</h1>
+      <CommentsClass comments={comments} /> */}
 
       
     </div>

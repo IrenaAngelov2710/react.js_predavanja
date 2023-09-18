@@ -5,6 +5,8 @@
 //? neka bidat vo tabela
 //? pokraj ova imate nekoe kopce LIKE sto vo konzola ke pecati +1
 
+import PropTypes from 'prop-types';
+
 export function Comments(props) {
     console.log(props);
     function onLikeClick() {
@@ -36,6 +38,19 @@ export function Comments(props) {
         </table>
         </>
     );
+  }
+
+  Comments.propTypes = {
+    comments: PropTypes.arrayOf(PropTypes.object({
+        id: PropTypes.number.isRequired,
+        author: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  };
+
+  Comments.defaultProps = {
+    comment: {id: 0, author: "Without Author", text: "Without comment"},
   }
 
   //* Ovoj kod pretstavuva funkcionalna komponenta
