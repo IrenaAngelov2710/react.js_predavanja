@@ -1,16 +1,58 @@
-.car, .student, .zimski, .leten {
+/* Component Car */
+.car {
   text-align: center;
 }
 
-.component {
+/* Component Student */
+.student {
   text-align: center;
 }
-table, th {
+
+.zimski, .leten {
+  text-align: center;
+  color: rosybrown;
+}
+
+table {
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
   background-color: bisque;
   margin: 0 auto;
+}
+
+table th {
   border: 1px solid white;
 }
 
 table td {
+  text-align: center;
   border: 1px solid white;
+}
+
+/* Component Counter */
+.counter {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  background-color: bisque;
+  text-align: center;
+  margin: auto;
+}
+
+.klik {
+  font-size: 24px;
+  padding-top: 30%;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px, 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rosybrown;
 }

@@ -1,0 +1,23 @@
+.cars {
+    background-image: linear-gradient(to bottom right, white, black);
+}
+
+.car-img {
+    margin-bottom: 30px;
+    transition: transform 0.3s;
+}
+
+.car-img:hover {
+    transform: scale(1.2);
+}
+
+button {
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s
+}
+
+button:hover {
+    background-color: #0056b3;
+}

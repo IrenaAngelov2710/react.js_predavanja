@@ -4,6 +4,7 @@ import { User } from "./components/User";
 import { Student } from "./components/Student";
 import { State } from "./components/State";
 import { Dates } from "./components/Dates";
+import { Counter } from "./components/Counter";
 
 
 function App() {
@@ -36,10 +37,11 @@ function App() {
       {/* <Car vehicles={cars} /> */}
       {/* <User user={user} user1={user1} shouldShowUser={1} /> */}
       {/* <User user1={user1} /> */}
-      <Student studenti={students} semestar={true} />
+      {/* <Student studenti={students} semestar={true} /> */}
       <br />
       {/* <State /> */}
       {/* <Dates /> */}
+      <Counter />
     </div>
   );
 }

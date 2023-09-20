@@ -3,6 +3,7 @@
 
 //* "import { useState } from "react";"
 // Importiranje na "useState" od React
+// Toa e React hook koj se koristi za sledenje i azuriranje na sostjbata na komponentata
 
 //* Definiranje na funkcionalnata komponenta "State"
 // Vo ovaa funkcionalna komponenta se koristi "useSate" za kreiranje sostojba so pocetna vrednost "..."
