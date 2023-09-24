@@ -23,7 +23,7 @@ export const CarMarket = () => {
   //* Koga korisnikot ke klikne na kopceto "Add New Brand" se sozdava nov objekt "newCar" so "id", "brand" go koristi veneseniot tekst za noviot brend, a "quantity" e postaveno na 1
   // Potoa se azurira sostojbata "carsForSale", so noviot avtomobil i se resetira "newBrand"
   const handleAddNewBrand = () => {
-    const newCar = { id: Date.now(), brand: newBrand, quantity: 1 };
+    const newCar = { id: carsForSale.id + 1, brand: newBrand, quantity: 1 };
     setCarsForSale([...carsForSale, newCar]);
     setNewBrand("");
   };
