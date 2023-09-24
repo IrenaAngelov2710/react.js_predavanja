@@ -1,38 +1,61 @@
-.App {
+/* Car.js */
+
+.cars {
+  background-image: linear-gradient(to bottom right, white, black);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.car-img {
+  margin-bottom: 30px;
+  transition: transform 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.car-img:hover {
+  transform: scale(1.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button {
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.show-results {
+  width: 50%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.h1-show-results {
+  padding: 20px;
+}
+
+.input-show-results {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.results-btn {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.results-btn:hover {
+  background-color: #0056b3;
+}
+
+.table-show-results {
+  width: 80%;
+  margin: auto;
 }

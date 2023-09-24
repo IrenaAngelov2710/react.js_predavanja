@@ -1,10 +1,10 @@
 import "./App.css";
-import "./Car.css";
 import { useState, useEffect } from "react";
 import { Movie } from "./components/Movie";
 import { IncrementClass } from "./components/IncrementClass";
 import { Users } from "./components/Users";
-import { Car } from './components/Car';
+import { Car } from "./components/Car";
+import { ShowResults } from "./components/ShowResults";
 
 
 function App() {
@@ -320,7 +320,8 @@ function App() {
       {/* <Movie /> */}
       {/* <IncrementClass /> */}
       {/* <Users users={users} /> */}
-      <Car />
+      {/* <Car /> */}
+      <ShowResults />
     </div>
   );
 }
