@@ -2,22 +2,37 @@ import { useState, useEffect } from "react";
 
 export const SimpleForm = () => {
   // dokolku ne specificirame type vo <input> po default e tekstualno pole
-  const initialValues = { username: "", email: "", password: "", captcha: "" };
+  // const initialValues = { username: "", email: "", password: "", captcha: "" };
+  const initialValues = { username: "", email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [isSubmit, setIsSubmit] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+  // Izbegavajte da rabotite so undefined
 
   //   const [username, setUsername] = useState("");
   //   const [email, setEmail] = useState("");
 
-  let handleChange = (e) => {
+  let 
+  handleChange = (e) => {
     // let value = e.target.value;
     console.log(e);
     console.log(e.target);
-    const { name, value } = e.target; // destrukturiranje
-    // ...formValue - ova pravi kopija na site propertija vo nov objekt
+    const { name, value } = e.target;
+    // destrukturiranje
+    console.log(name);
+    console.log(value);
+    // ...formValue - ova pravi kopija na site propetija vo nov objekt
     // [name] : value - so ova go setirame propertyto(klucot)
     // sto nam ni treba
+    // setFormValues({ ...formValues, email: value });
+    // setFormValues({ ...formValues, username: value });
+    // setFormValues({ ...formValues, password: value });
+
+    console.log(formValues);
+
     setFormValues({ ...formValues, [name]: value });
+
+    console.log(formValues);
 
     // Ova dokolku odime peski
     // if(name === 'username') {
@@ -36,13 +51,47 @@ export const SimpleForm = () => {
   let handleSubmit = (e) => {
     e.preventDefault(); // prevent the form from default submitting
     // basicaly saying dont submit the form, I know what I am doing
+    setFormErrors(validate(formValues));
     setIsSubmit(true);
+  };
+
+  const validate = (values) => {
+    console.log(values);
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const errors = {};
+    if (!values.username) {
+      errors.username = "Username is required";
+    }
+
+    if (!values.email) {
+      errors.email = "Email is required";
+    } else if (!regex.test(values.email)) {
+      errors.email = "This is not a valid email format";
+    }
+
+    if (!values.password) {
+      errors.password = "Password is required!";
+    } else if (values.password.length < 5) {
+      errors.password = "Password is less then 5 characters";
+    } else if (values.password.length > 16) {
+      errors.password = "Password cannot exceed more than 16 characters";
+    }
+
+    console.log(errors);
+    return errors;
   };
 
   return (
     <div>
       <form>
         <h1>Login Form</h1>
+        {
+          // se sto ne e eksplicitno false ili empty e true
+        }
+        {Object.keys(formErrors).length === 0 && isSubmit && (
+          <div>Signed in successfully</div>
+        )}
+        <hr />
         <div>
           <div>
             <label>Username</label>
@@ -52,6 +101,14 @@ export const SimpleForm = () => {
               value={formValues.username}
               onChange={handleChange}
             />
+            {
+              // when we use ?, ova znaci ako postoi formErrors
+              // objektot togas pristapi go username preku nego
+              // if (formErrors) {
+              // formErrors.username
+              //}
+            }
+            <p style={{ color: "red" }}>{formErrors?.username}</p>
           </div>
           <div>
             <label>Email</label>
@@ -61,6 +118,7 @@ export const SimpleForm = () => {
               value={formValues.email}
               onChange={handleChange}
             />
+            <p style={{ color: "red" }}>{formErrors?.email}</p>
           </div>
           <div>
             <label>Password</label>
@@ -70,8 +128,9 @@ export const SimpleForm = () => {
               value={formValues.password}
               onChange={handleChange}
             />
+            <p style={{ color: "red" }}>{formErrors?.password}</p>
           </div>
-          <div>
+          {/* <div>
             <label>Captcha</label>
             <input
               name="captcha"
@@ -79,32 +138,45 @@ export const SimpleForm = () => {
               value={formValues.captcha}
               onChange={handleChange}
             />
-          </div>
+          </div> */}
         </div>
         <button onClick={handleSubmit}>Submit</button>
       </form>
-      {
-        // se sto ne e eksplicitno false ili empty e true
-      }
-      {isSubmit && <div>Signed in successfully</div>}
     </div>
   );
 };
 
-//* Se koristi "useState" i "useEffect" od React za upravuvanje so sostojbite i efektite vo komponetata
+//* Ovoj kod pretstavuva React komponenta za formular za najava(login form) koja gi koristi hooks "useState" i "useEffect"
 
-//* Se definira "initialValues" koj sodrzi pocetni vrednosti za formata
+//* import { useState, useEffect } from "react";
+// Ovde se importiraat "useState" i "useEffect" od React. Ovie hooks se koristat za upravuvanje so sostojbite i efektite vo komponentata
 
-//* Se koristat dve sostojbi "useState" za slednite celi:
-// - "formValues" gi cuva vrednostite od formata kako objekt
-// - "isSubmit" gi cuva informaciite dali formata bila pratena
+//* const initialValues = { username: "", email: "", password: "" };
+// Ova se pocetni vrednosti za polinjata na formularot (username, email i password)
 
-//* F-jata "handleChange" se povikuva pri promena na vrednostite vo input polinjata na formata. So ovaa f-ja vrednostite se azuriraat vo sostojbata "formValues" so koristenje na "setValues"
+//* const [formValues, setFormValues] = useState(initialValues);
+//* const [isSubmit, setIsSubmit] = useState(false);
+//* const [formErrors, setFormErrors] = useState({});
+// Se koristi "useState" za da se kreiraat sostojbite za cuvanje na tekovnite vrednosti na formularot(formValues), dali formularot e submitiran(isSubmit) i greskite vo formularot(formErrors)
 
-//* "useEffect" se koristi za sledenje na promenite na sostojbata "formValues" i pecatenje na nea vo kozolata
+//* let handleChange = (e) => {
+//   const { name, value } = e.target;
+//   setFormValues({ ...formValues, [name]: value });
+// };
+// Ova e f-ja koja ke se povikuva koga korisnikot ke vnese nekoi podatoci vo polinjata na formularot. Taa ja azurira sostojbata "formValues" so novite vrednosti na polinjata
 
-//* F-jata "handleSubmit" se povikuva koga korisnikot ke pritisne na kopceto za prakanje na formata. So "e.preventDefault()" se sprecuva standardnoto prakanje na formata, a "setIsSubmit(true)" se postavuva "isSubmit" na "true"
+//* useEffect(() => {
+//   console.log(formValues);
+// }, [formValues]);
+// Se koristi "useeffect" za da se sledat promenite vo sostojbata "formValues". Koga ke se promeni "formValues", se povikuva ovoj efekt i se pecatat tekovnite vrednosti na konzolata
 
-//* Vo vizuelniot del na komponentata se prikrazuva forma za najava so input polinja za Username, Email, Password i Catpcha. Sekoe pole ima soodvetno ime, vrednost(value) i f-ja za obrabotka na promenite(onChange)
+//* let handleSubmit = (e) => {
+//   e.preventDefault(); 
+//   setFormErrors(validate(formValues)); 
+// };
+// Ova e f-ja koja se izvrsuva koga korisnikot ke go submitira formularot
+// Taa ja sprecuva standardnata akcija za submitiranje, pravi validacija na vnesenite vrednosti koristejki na f-jata "validate" i obelezuva deka formularot e submitiran
 
-//* Na kraj se proveruva dali "isSubmit" e "true" i ako e se prikazuva porakata "Signed in successfully"
+//* const validate = (values) => {...};
+// Ova e f-ja koja se koristi za validacija na vnesenite podatoci vo formularot
+// Se pravat proverki za zadolzitelnite polinja, validen format na email i dolzina na lozinkata

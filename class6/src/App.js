@@ -1,8 +1,9 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Todo } from "./components/Todo";
-import { SimpleForm } from "./components/SimpleForm";
 import { CarMarket } from "./components/CarMarket";
+import { SimpleForm } from "./components/SimpleForm";
+import { UserInfoForm } from "./components/UserInfoForm";
 
 function App() {
 
@@ -71,8 +72,9 @@ function App() {
       <button onClick={addTodo}>Add TODO</button>
       <hr />
       <Todo listOfTodos={todos} markTodoAsDone={markTodoAsDone} /> */}
+      {/* <CarMarket /> */}
       {/* <SimpleForm /> */}
-      <CarMarket />
+      <UserInfoForm />
     </div>
   );
 }

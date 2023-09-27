@@ -37,7 +37,16 @@
   }
 }
 
-/* UserInforForm.js */
-.error-p {
-  color: red
+/* Movie.js */
+
+.image-containerr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-container img {
+  width: 300px;
+  height: 300px;
+  margin-right: 10px;
 }
