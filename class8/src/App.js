@@ -7,8 +7,9 @@ import { Book } from "./components/Book";
 import { NewBook } from "./components/NewBook";
 import { NotFound } from "./components/NotFound";
 
-import { MoviesHome } from "./MoviesHome";
+
 import { Movies } from "./components/Movies";
+import { HomeMovies } from "./components/HomeMovies";
 
 
 // install react router
@@ -19,7 +20,7 @@ function App() {
     <div className="App">
       <nav>
         <ul>
-          <li>
+          {/* <li>
             {
               // to ni kazuva koe treba da bide naseto url
             }
@@ -27,12 +28,12 @@ function App() {
           </li>
           <li>
             <Link to="/books">BookList</Link>
-          </li>
+          </li> */}
           {/* <li> THIS SHOULD NOT BE USED
             <a href="/books">Books with anchor</a>
           </li> */}
 
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/">HomeMovies</Link></li>
           <li><Link to="/movies">Movies</Link></li>
         </ul>
       </nav>
@@ -45,8 +46,8 @@ function App() {
         {/* dokolku ruterot ne fati nikoja ruta od gore, togas ke se ispecati ovaa */}
         {/* <Route path='*' element={<NotFound/>}/> */}
 
-        {/* <Route path="/" element={<MoviesHome />} />
-        <Route path="/movies" element={<Movies />} /> */}
+        <Route path="/" element={<HomeMovies />} />
+        <Route path="/movies" element={<Movies />} />
       </Routes>
     </div>
   );
