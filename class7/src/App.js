@@ -76,3 +76,31 @@ function App() {
 
 export default App;
 
+// Vo React, "context" se koristi za spodeluvanje na podatoci pomegu komponentite koi se dlaboko vgnezdeni vo strukturata na komponentite, bez potreba da gi predavame podatocite kako props niz site nivoa na komponentite
+// Kontekstot ni ovozmozuva da kreirame globalen objekt so vrednosti koi sakame da gi spodeluvame i potoa tie vrednosti moze da gi koristime vo bilo koja komponenta sto se naoga vo toj kontekst
+// Za da koristime kontekst prvo treba da kreirame i definirame, koristejki ja f-jata "React.createContext"
+// Ovoj kontekst ke sluzi kako kontejner za spodeluvanje na podatoci
+// Primer:
+// import React from "react";
+// export const MyContext = React.createContext();
+
+// Otkako ke go kreirame kontekstot moze da go koristime vo komponentite koristejki ja komponentata "Context.Provider" koja ovozmozuva postavuvanje na vrednosti koi sakame da gi spodelime
+// import React from "react";
+// import MyContext from ""./MyContext";
+
+// export const MyContext = React.createContext();
+
+// function App() {
+//   const sharedValue = "Ova e vrednosta sto sakam da ja spodelam";
+
+//   return (
+//     <MyContext.Provider value={sharedValue}>
+//       {/* Site komponenti */}
+//     </MyContext.Provider>
+//   );
+// }
+
+// export default App;
+
+
+

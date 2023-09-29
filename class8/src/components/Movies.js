@@ -1,3 +1,12 @@
+// Kreirajte komponenta home koja sto vnatre ke ima
+// nekoj text Welcome to my page, potoa vo nekoj h2
+// I am learning React Router.
+// Potoa da imame uste edna koomponenta Movies i vnatre
+// da prikazeme nekoja lista od filmovi,  tie neka imaat
+// ime i zanr
+// Da kreirame ruti za Home i Movies i navigacija do niv
+// za novies neka bide /movies a za home /
+
 export const Movies = () => {
     const movies = [
         { id: 1, title: "Gone girl", genre: "Thriller/Mystery/Drama" },
@@ -11,7 +20,7 @@ export const Movies = () => {
             <ul>
                 {movies.map((movie) =>
                     <li key={movie.id}>
-                        {movie.title} ({movie.genre})
+                        <strong>{movie.title}</strong> ({movie.genre})
                     </li>)}
             </ul>
         </div>
