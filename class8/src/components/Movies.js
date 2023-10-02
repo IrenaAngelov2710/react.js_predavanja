@@ -1,11 +1,13 @@
 // Kreirajte komponenta home koja sto vnatre ke ima
 // nekoj text Welcome to my page, potoa vo nekoj h2
 // I am learning React Router.
-// Potoa da imame uste edna koomponenta Movies i vnatre
-// da prikazeme nekoja lista od filmovi,  tie neka imaat
-// ime i zanr
-// Da kreirame ruti za Home i Movies i navigacija do niv
-// za novies neka bide /movies a za home /
+//? Potoa da imame uste edna koomponenta Movies i vnatre
+//? da prikazeme nekoja lista od filmovi,  tie neka imaat
+//? ime i zanr
+//? Da kreirame ruti za Home i Movies i navigacija do niv
+//? za novies neka bide /movies a za home /
+
+import { Link } from "react-router-dom";
 
 export const Movies = () => {
     const movies = [
@@ -20,9 +22,14 @@ export const Movies = () => {
             <ul>
                 {movies.map((movie) =>
                     <li key={movie.id}>
-                        <strong>{movie.title}</strong> ({movie.genre})
+                        <strong>Title: {movie.title}</strong> Genre: {movie.genre}
                     </li>)}
             </ul>
+            <Link to="/movies/new">New Movie</Link>
         </div>
     )
 };
+
+
+
+

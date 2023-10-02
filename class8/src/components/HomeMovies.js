@@ -1,6 +1,6 @@
-// Kreirajte komponenta home koja sto vnatre ke ima
-// nekoj text Welcome to my page, potoa vo nekoj h2
-// I am learning React Router.
+//? Kreirajte komponenta home koja sto vnatre ke ima
+//? nekoj text Welcome to my page, potoa vo nekoj h2
+//? I am learning React Router.
 // Potoa da imame uste edna koomponenta Movies i vnatre
 // da prikazeme nekoja lista od filmovi,  tie neka imaat
 // ime i zanr

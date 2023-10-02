@@ -1,21 +1,35 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes, Link } from "react-router-dom";
+import { useState} from "react";
 import { Home } from "./components/Home";
 import { BookList } from "./components/BookList";
 import { Book } from "./components/Book";
 import { NewBook } from "./components/NewBook";
 import { NotFound } from "./components/NotFound";
 
-
-import { Movies } from "./components/Movies";
 import { HomeMovies } from "./components/HomeMovies";
+import { Movies } from "./components/Movies";
+import { NewMovie } from "./components/NewMovie";
+import { NotFoundMovie } from "./components/NotFoundMovie";
+import { MovieList } from "./components/MovieList";
+import { Movie } from "./components/Movie";
+
+
 
 
 // install react router
 // npm i react-router-dom --save
 
 function App() {
+ const movies = [
+    { id: 1, title: "Gone girl", genre: "Thriller/Mystery/Drama", director: "David Fincher", releaseDate: "03-10-2014" },
+    { id: 2, title: "Taken", genre: "Action/Thriller/Crime", director: "Pierre Morel", releaseDate:"19-02-2009" },
+    { id: 3, title: "A Beautiful Mind", genre: "Romance/Drama/Historical drama", director: "Ron Howard", releaseDate: "28-02-2002" },
+    { id: 4, title: "Unknown", genre: "Action/Thriller/Mystery", director: "Jaume Collet-Serra", releaseDate: "03-03-2011" },
+    { id: 5, title: "Titanic", genre: "Romance/Drama/Disaster", director: "James Cameron", releaseDate: "19-12-1997" },
+];
+
   return (
     <div className="App">
       <nav>
@@ -34,20 +48,25 @@ function App() {
           </li> */}
 
           <li><Link to="/">HomeMovies</Link></li>
-          <li><Link to="/movies">Movies</Link></li>
+          <li><Link to="/movies">MovieList</Link></li>
+          <li><Link to="*">NotFoundMovie</Link></li>
         </ul>
       </nav>
 
       <Routes>
-        {/* <Route path='/' element={<Home />} />
-        <Route path='/books' element={<BookList />} />
-        <Route path='/books/:id' element={<Book/>} />
-        <Route path='/books/new' element={<NewBook/>}/> */}
+        {/* <Route path="/" element={<Home />} />
+        <Route path="/books" element={<BookList />} />
+        <Route path="/books/:id" element={<Book />} />
+        <Route path="/books/new" element={<NewBook />}/> */}
         {/* dokolku ruterot ne fati nikoja ruta od gore, togas ke se ispecati ovaa */}
-        {/* <Route path='*' element={<NotFound/>}/> */}
+        {/* <Route path="*" element={<NotFound/>}/> */}
 
-        <Route path="/" element={<HomeMovies />} />
-        <Route path="/movies" element={<Movies />} />
+        <Route path="/" element={<HomeMovies />} /> 
+        {/* <Route path="/movies" element={<Movies />} /> */}
+        <Route path="/movies" element={<MovieList movies={movies} />} />
+        <Route path="/movies/:id" element={<Movie movies={movies}/>} />
+        <Route path="/movies/new" element={<NewMovie />} />
+        <Route path="*" element={<NotFoundMovie />} />
       </Routes>
     </div>
   );
