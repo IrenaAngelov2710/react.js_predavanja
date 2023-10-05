@@ -19,20 +19,17 @@
 //? BONUS: listat da bide samo vo app.js a preku props prakajte ja vo
 //? komponentite sto vi trebaat
 
-import React from "react";
 import { useParams } from "react-router-dom";
 
 export const Movie = ({ movies }) => {
-  //const movieList = [{}];
 
-  // ova id e ona sto se naoga vo app.js vo dinamickata ruta za movies
   const { id } = useParams();
   const selectedMovie = movies.find(movie => movie.id === parseInt(id));
 
  
   return (
   <div>
-    <h1>Information about the moive:</h1>
+    <h1>Information about the movie:</h1>
     <h2>{selectedMovie.title}</h2>
     <p>Genre: {selectedMovie.genre}</p>
     <p>Director: {selectedMovie.director}</p>

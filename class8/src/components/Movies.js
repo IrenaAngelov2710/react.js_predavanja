@@ -25,7 +25,6 @@ export const Movies = () => {
                         <strong>Title: {movie.title}</strong> Genre: {movie.genre}
                     </li>)}
             </ul>
-            <Link to="/movies/new">New Movie</Link>
         </div>
     )
 };
