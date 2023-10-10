@@ -2,15 +2,19 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Link, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { API_URL } from "./uttils/constants";
+import { API_RickAndMorty, API_URL } from "./uttils/constants";
 import { Albums } from "./components/Albums";
 import { Gallery } from "./components/Gallery";
 import { Motivation } from "./components/Motivation";
+import { Characters } from "./components/Characters";
 
 function App() {
   const [albums, setAlbums] = useState([]);
   const [photos, setPhotos] = useState([]);
   const [selectedPhoto, setSelectedPhoto] = useState("");
+
+  // Vezba na cas
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     fetch(API_URL + "/albums")
@@ -21,6 +25,12 @@ function App() {
     fetch(API_URL + "/photos")
       .then((res) => res.json())
       .then((result) => setPhotos(result));
+
+      // Vezba na cas
+      fetch(API_RickAndMorty + "/character")
+      .then((res) => res.json())
+      .then((result) => setCharacters(result.results))
+      .catch((err) => alert(err));
   }, []);
 
   function deleteAlbum(album) {
@@ -33,12 +43,13 @@ function App() {
     console.log("inside close photo");
     setSelectedPhoto("");
   }
-
+  
   return (
     <div className="App">
-      <h1>Welcome to class10</h1>
+      {/* <h1>Welcome to class10</h1> */}
+      <h1>Rick and Morty API</h1>
       <ul>
-        <li>
+        {/* <li>
           <Link to="/albums">Albums</Link>
         </li>
         <li>
@@ -46,11 +57,16 @@ function App() {
         </li>
         <li>
           <Link to="/motivation">Motivation</Link>
+        </li> */}
+
+        {/* Vezba na cas */}
+        <li>
+          <Link to="/character">Characters</Link>
         </li>
       </ul>
 
       <Routes>
-        <Route
+        {/* <Route
           path="/albums"
           element={<Albums listOfAlbums={albums} deleteAlbum={deleteAlbum} />}
         />
@@ -65,7 +81,14 @@ function App() {
             />
           }
         />
-        <Route path="/motivation" element={<Motivation />} />
+        <Route path="/motivation" element={<Motivation />} /> */}
+
+        {/* Vezba na cas */}
+        <Route
+        path="/character"
+        element={<Characters listOfCharacters={characters} />}
+        />
+
       </Routes>
     </div>
   );
