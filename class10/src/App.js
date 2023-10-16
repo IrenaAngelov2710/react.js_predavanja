@@ -7,6 +7,7 @@ import { Albums } from "./components/Albums";
 import { Gallery } from "./components/Gallery";
 import { Motivation } from "./components/Motivation";
 import { Characters } from "./components/Characters";
+import { RandomMeal } from "./components/TheMeal";
 
 function App() {
   const [albums, setAlbums] = useState([]);
@@ -47,7 +48,7 @@ function App() {
   return (
     <div className="App">
       {/* <h1>Welcome to class10</h1> */}
-      <h1>Rick and Morty API</h1>
+      {/* <h1>Rick and Morty API</h1> */}
       <ul>
         {/* <li>
           <Link to="/albums">Albums</Link>
@@ -59,10 +60,14 @@ function App() {
           <Link to="/motivation">Motivation</Link>
         </li> */}
 
+        {/* Domasna TheMeal */}
+        <h1>Click</h1><Link to="/meal">hier</Link><span> to see a random meal</span>
+        <h3>Click refresh to see another random meal</h3>
+
         {/* Vezba na cas */}
-        <li>
+        {/* <li>
           <Link to="/character">Characters</Link>
-        </li>
+        </li> */}
       </ul>
 
       <Routes>
@@ -83,11 +88,14 @@ function App() {
         />
         <Route path="/motivation" element={<Motivation />} /> */}
 
+        {/* Domasna TheMeal */}
+        <Route path="/meal" element={<RandomMeal />} />
+
         {/* Vezba na cas */}
-        <Route
+        {/* <Route
         path="/character"
         element={<Characters listOfCharacters={characters} />}
-        />
+        /> */}
 
       </Routes>
     </div>

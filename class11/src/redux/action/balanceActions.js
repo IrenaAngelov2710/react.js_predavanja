@@ -1,5 +1,5 @@
 export const depositBalance = (value) => {
-    console.log("DEPOSIT ACTION");
+    console.log("DEPOSITING ACTION");
     return {
       type: "DEPOSIT",
       payload: value,

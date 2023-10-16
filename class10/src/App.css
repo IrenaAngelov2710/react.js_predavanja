@@ -101,3 +101,15 @@
   height: 100%;
   object-fit: cover;
 }
+
+.meal {
+  background-image: url(https://media.istockphoto.com/id/639004898/photo/wooden-spoon-and-spatula-on-a-napkin-and-wooden-tab.jpg?s=612x612&w=is&k=20&c=XY1V_5adjY_kphghcyq6a4tE9KLDHQMtJkjtItLDg_s=); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  padding-left: 30%;
+  padding-right: 10px;
+  width: 50%;
+  height: 50%;
+  
+}

@@ -1,0 +1,17 @@
+Sto e Redux?
+
+Redux e biblioteka vo React koja pomaga vo upravuvanje so sostojbite vo nasata aplikacija. 
+Redux go pravi upravuvanjeto so podatocite vo aplikacijata poednostavno i organizirano.
+
+Osnovnata ideja na Redux e deka sostojbata vo nasata aplikacija se cuva vo eden centralen "store".
+Ova e mesto kade se zacuvuvaat site bitni informacii za nasata aplikacija.
+Koga sakame da ja promenime sostojbata ne ja menuvame neposredno taa sostojba, tuku prvo pravime akcija (action).
+Akciite se objekti koi gi prakame do Redux store i tie gi koristime za da ja promenime sostojbata.
+
+Redux vo svoeto srce koristi tri osnovni delovi:
+Store: Ova e centralnata sostojba na nasata aplikacija. Tamu se cuvaat site bitni podatoci.
+Actions: Akciite se objekti koi opisuvaat kakva promena sakame da napravime vo sostojbata na nasata aplikacija. Primer: "dodadi nov korisnik" ili "promeni boja na pozadina".
+Reducers: Reducerite se cisti f-cii koi gi primaat akciite i se primeneti za promeni vo sostojbata. Na primer ako sakame da go promenime imeto na korisnikot, ke imame reducer koj ke go zeme staroto ime i ke go zameni so novo.
+
+Redux pomaga da go organizirame kodot vo nasata aplikacija i go pravi sledenjeto na promenite vo sostojbata poednostavno.
+Koga ke se isprati akcija, Redux avtomatski ja osvezuva sostojbata i gi azurira komponentite koi ja koristat sostojbata so novata informacija.
