@@ -1,57 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 import { Link, Route, Routes } from "react-router-dom";
+import { Characters } from "./components/Characters";
 import { useEffect, useState } from "react";
+import { Pagination } from "./components/Pagination";
 import { API_URL } from "./uttils/constants";
-import { Characters } from './components/Characters';
-import { Pagination } from './components/Pagination';
+import { LocationInfo } from "./components/LocationInfo";
+import { EpisodeDetails } from "./components/EpisodeDetails";
 
 function App() {
-  const [listOfCharacters, setListOfCharacters] = useState([]);
-  const [location, setLocation] = useState([]);
-  const [episode, setEpisode] = useState([]);
+  // curentPage e ona sto ni oznacuva na koja strana se naogame
   const [currentPage, setCurrentPage] = useState(1);
-  const [charactersPerPage, setCharactersPerPage] = useState(3);
+  const [apiData, setApiData] = useState({});
 
   useEffect(() => {
-    fetch(API_URL + "/character")
+    console.log("FETCHING DATA WITH PAGE: " + currentPage);
+    fetch(API_URL + "/character?page=" + currentPage)
       .then((res) => res.json())
-      .then((result) => setListOfCharacters(result.results))
+      .then((result) => setApiData(result))
       .catch((err) => alert(err));
-
-      fetch(API_URL + "/location")
-      .then((res) => res.json())
-      .then((result) => setLocation(result.results))
-      .catch((err) => alert(err));
-
-      fetch(API_URL + "/episode")
-      .then((res) => res.json())
-      .then((result) => setEpisode(result.results))
-      .catch((err) => alert(err));
-  }, []);
-
-    const lastCharacter = currentPage * charactersPerPage;
-    const firstCharacter = lastCharacter - charactersPerPage;
-    const characters = listOfCharacters.slice(firstCharacter, lastCharacter);
+  }, [currentPage]);
 
   return (
     <div className="App">
-      <h1>RICK AND MORTY <Link className="link" to="/character">CHARACTERS</Link></h1>
-  
-      <Routes>
-        <Route path="/character" element={<Characters
-         listOfCharacters={characters}
-         location={location}
-         episode={episode}
-        />} />
+      <h1>
+        RICK AND MORTY{" "}
+        <Link className="link" to="/character">
+          CHARACTERS
+        </Link>
+      </h1>
 
+      <Routes>
+        <Route path="/character" element={<Characters apiData={apiData} />} />
       </Routes>
-    
+
       <Pagination
-        totalCharacters={listOfCharacters.length}
-        charactersPerPage={charactersPerPage}
         setCurrentPage={setCurrentPage}
-        currentPage={currentPage}/>
+        currentPage={currentPage}
+        apiData={apiData}
+      />
     </div>
   );
 }
